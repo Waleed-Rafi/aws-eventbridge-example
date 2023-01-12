@@ -43,6 +43,8 @@ Resources:
         - !Ref CommonDependencies
       Policies:
         - VPCAccessPolicy: {}
+        - EventBridgePutEventsPolicy: # You don't need to give  eventBridgePutEventPolicy, I am just geving it so I can get cloudwatch logs access (default behavior)
+            EventBusName: "default"
 
   TriggerConsumerFunctionRule:
     Type: AWS::Events::Rule
